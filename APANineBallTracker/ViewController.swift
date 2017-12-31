@@ -26,6 +26,13 @@ class ViewController: UIViewController {
     var loserScore = 0
     var loserSkillLevel = 0
     
+    var inning = 0
+    var player1ID = 0
+    var player2ID = 0
+    
+    @IBOutlet weak var inningLabel: UILabel!
+    
+    
     @IBOutlet weak var p1NameLabel: UILabel!
     @IBOutlet weak var p2NameLabel: UILabel!
     
@@ -171,6 +178,17 @@ class ViewController: UIViewController {
         remainder()
         playSound(soundFileName: "ballSunk")
         
+       player1ID = 1
+                
+        if player2ID == 1 && player1ID == 1
+        {
+            inning = inning + 1
+            inningLabel.text = "\(inning)"
+            player1ID = 0
+            player2ID = 0
+        }
+        
+        
         
 
 
@@ -202,6 +220,11 @@ class ViewController: UIViewController {
         skillLevelReached()
         remainder()
         playSound(soundFileName: "ballSunk")
+        
+        if player1ID == 1
+        {
+            player2ID = 1
+        }
         
     }
     

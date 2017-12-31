@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		E7C473131FD7602F00F9AAC3 /* Applause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Applause.wav; sourceTree = "<group>"; };
 		E7C473151FD76EA900F9AAC3 /* ballSunk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ballSunk.wav; sourceTree = "<group>"; };
-		E7D88C901FD3B158004D461C /* NineBallTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NineBallTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7D88C901FD3B158004D461C /* APANineBallTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APANineBallTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7D88C931FD3B158004D461C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7D88C951FD3B158004D461C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7D88C981FD3B158004D461C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		E7D88C871FD3B158004D461C = {
 			isa = PBXGroup;
 			children = (
-				E7D88C921FD3B158004D461C /* NineBallTracker */,
+				E7D88C921FD3B158004D461C /* APANineBallTracker */,
 				E7D88C911FD3B158004D461C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,12 +52,12 @@
 		E7D88C911FD3B158004D461C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E7D88C901FD3B158004D461C /* NineBallTracker.app */,
+				E7D88C901FD3B158004D461C /* APANineBallTracker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E7D88C921FD3B158004D461C /* NineBallTracker */ = {
+		E7D88C921FD3B158004D461C /* APANineBallTracker */ = {
 			isa = PBXGroup;
 			children = (
 				E7D88C931FD3B158004D461C /* AppDelegate.swift */,
@@ -70,15 +70,15 @@
 				E7C473131FD7602F00F9AAC3 /* Applause.wav */,
 				E7C473151FD76EA900F9AAC3 /* ballSunk.wav */,
 			);
-			path = NineBallTracker;
+			path = APANineBallTracker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E7D88C8F1FD3B158004D461C /* NineBallTracker */ = {
+		E7D88C8F1FD3B158004D461C /* APANineBallTracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E7D88CA21FD3B158004D461C /* Build configuration list for PBXNativeTarget "NineBallTracker" */;
+			buildConfigurationList = E7D88CA21FD3B158004D461C /* Build configuration list for PBXNativeTarget "APANineBallTracker" */;
 			buildPhases = (
 				E7D88C8C1FD3B158004D461C /* Sources */,
 				E7D88C8D1FD3B158004D461C /* Frameworks */,
@@ -88,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = NineBallTracker;
+			name = APANineBallTracker;
 			productName = NineBallTracker;
-			productReference = E7D88C901FD3B158004D461C /* NineBallTracker.app */;
+			productReference = E7D88C901FD3B158004D461C /* APANineBallTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -109,7 +109,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E7D88C8B1FD3B158004D461C /* Build configuration list for PBXProject "NineBallTracker" */;
+			buildConfigurationList = E7D88C8B1FD3B158004D461C /* Build configuration list for PBXProject "APANineBallTracker" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -122,7 +122,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E7D88C8F1FD3B158004D461C /* NineBallTracker */,
+				E7D88C8F1FD3B158004D461C /* APANineBallTracker */,
 			);
 		};
 /* End PBXProject section */
@@ -287,8 +287,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z9PP95CL6Z;
-				INFOPLIST_FILE = NineBallTracker/Info.plist;
+				DEVELOPMENT_TEAM = NYV7TZJ4MH;
+				INFOPLIST_FILE = "$(SRCROOT)/APANineBallTracker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skwong.NineBallTracker;
@@ -303,8 +303,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z9PP95CL6Z;
-				INFOPLIST_FILE = NineBallTracker/Info.plist;
+				DEVELOPMENT_TEAM = NYV7TZJ4MH;
+				INFOPLIST_FILE = "$(SRCROOT)/APANineBallTracker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skwong.NineBallTracker;
@@ -317,7 +317,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E7D88C8B1FD3B158004D461C /* Build configuration list for PBXProject "NineBallTracker" */ = {
+		E7D88C8B1FD3B158004D461C /* Build configuration list for PBXProject "APANineBallTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E7D88CA01FD3B158004D461C /* Debug */,
@@ -326,7 +326,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E7D88CA21FD3B158004D461C /* Build configuration list for PBXNativeTarget "NineBallTracker" */ = {
+		E7D88CA21FD3B158004D461C /* Build configuration list for PBXNativeTarget "APANineBallTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E7D88CA31FD3B158004D461C /* Debug */,
