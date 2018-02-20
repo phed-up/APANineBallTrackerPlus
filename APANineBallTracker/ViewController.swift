@@ -67,58 +67,74 @@ class ViewController: UIViewController {
     @IBOutlet weak var p1_1: UILabel!
     @IBOutlet weak var p2_1: UILabel!
     @IBOutlet weak var d_1: UILabel!
+    @IBOutlet weak var IN1: UILabel!
     
     @IBOutlet weak var p1_2: UILabel!
     @IBOutlet weak var p2_2: UILabel!
     @IBOutlet weak var d_2: UILabel!
+    @IBOutlet weak var IN2: UILabel!
+    
     
     @IBOutlet weak var p1_3: UILabel!
     @IBOutlet weak var p2_3: UILabel!
     @IBOutlet weak var d_3: UILabel!
+    @IBOutlet weak var IN3: UILabel!
     
     @IBOutlet weak var p1_4: UILabel!
     @IBOutlet weak var p2_4: UILabel!
     @IBOutlet weak var d_4: UILabel!
+    @IBOutlet weak var IN4: UILabel!
+    
     
     @IBOutlet weak var p1_5: UILabel!
     @IBOutlet weak var p2_5: UILabel!
     @IBOutlet weak var d_5: UILabel!
+    @IBOutlet weak var IN5: UILabel!
     
     @IBOutlet weak var p1_6: UILabel!
     @IBOutlet weak var p2_6: UILabel!
     @IBOutlet weak var d_6: UILabel!
+    @IBOutlet weak var IN6: UILabel!
     
     @IBOutlet weak var p1_7: UILabel!
     @IBOutlet weak var p2_7: UILabel!
     @IBOutlet weak var d_7: UILabel!
+    @IBOutlet weak var IN7: UILabel!
     
     @IBOutlet weak var p1_8: UILabel!
     @IBOutlet weak var p2_8: UILabel!
     @IBOutlet weak var d_8: UILabel!
+    @IBOutlet weak var IN8: UILabel!
     
     @IBOutlet weak var p1_9: UILabel!
     @IBOutlet weak var p2_9: UILabel!
     @IBOutlet weak var d_9: UILabel!
+    @IBOutlet weak var IN9: UILabel!
     
     @IBOutlet weak var p1_10: UILabel!
     @IBOutlet weak var p2_10: UILabel!
     @IBOutlet weak var d_10: UILabel!
+    @IBOutlet weak var IN10: UILabel!
     
     @IBOutlet weak var p1_11: UILabel!
     @IBOutlet weak var p2_11: UILabel!
     @IBOutlet weak var d_11: UILabel!
+    @IBOutlet weak var IN11: UILabel!
     
     @IBOutlet weak var p1_12: UILabel!
     @IBOutlet weak var p2_12: UILabel!
     @IBOutlet weak var d_12: UILabel!
+    @IBOutlet weak var IN12: UILabel!
     
     @IBOutlet weak var p1_13: UILabel!
     @IBOutlet weak var p2_13: UILabel!
     @IBOutlet weak var d_13: UILabel!
+    @IBOutlet weak var IN13: UILabel!
     
     @IBOutlet weak var p1_14: UILabel!
     @IBOutlet weak var p2_14: UILabel!
     @IBOutlet weak var d_14: UILabel!
+    @IBOutlet weak var IN14: UILabel!
     
     
     
@@ -178,16 +194,19 @@ class ViewController: UIViewController {
         remainder()
         playSound(soundFileName: "ballSunk")
         
-       player1ID = 1
-                
-        if player2ID == 1 && player1ID == 1
-        {
-            inning = inning + 1
-            inningLabel.text = "\(inning)"
-            player1ID = 0
-            player2ID = 0
-        }
-        
+//       player1ID = 1
+//
+//        if player2ID == 1 && player1ID == 1
+//        {
+//            inning = inning + 1
+//            player1ID = 0
+//            player2ID = 0
+//
+//
+//            updateInnings()
+//            inningLabel.text = "\(inning)"
+//
+//        }
         
         
 
@@ -221,10 +240,9 @@ class ViewController: UIViewController {
         remainder()
         playSound(soundFileName: "ballSunk")
         
-        if player1ID == 1
-        {
-            player2ID = 1
-        }
+        
+        player2ID = 1
+        
         
     }
     
@@ -248,6 +266,7 @@ class ViewController: UIViewController {
         
         scoring()
         updateScore()
+        playSound(soundFileName: "Basso")
         
         
 
@@ -278,7 +297,7 @@ class ViewController: UIViewController {
         
        
         
-        if (player1Score + deadBall + player2Score) == 11
+        if (player1Score + deadBall + player2Score) == 10
 
         {
 
@@ -287,19 +306,22 @@ class ViewController: UIViewController {
             p1_1.text = "\(player1Score)"
             p2_1.text = "\(player2Score)"
             d_1.text = "\(deadBall)"
+          
+    
         }
         
         
-        if (player1Score + deadBall + player2Score) == 22
+        if (player1Score + deadBall + player2Score) == 20
         {
             game3.isHidden = false
             
             p1_2.text = "\(player1Score - Int(p1_1.text!)!)"
             p2_2.text = "\(player2Score - Int(p2_1.text!)!)"
             d_2.text = "\(deadBall - Int(d_1.text!)!)"
+
         }
         
-        if (player1Score + deadBall + player2Score) == 33
+        if (player1Score + deadBall + player2Score) == 30
         {
             game4.isHidden = false
             
@@ -308,7 +330,7 @@ class ViewController: UIViewController {
             d_3.text = "\(deadBall - Int(d_2.text!)! - Int(d_1.text!)!)"
         }
         
-        if (player1Score + deadBall + player2Score) == 44
+        if (player1Score + deadBall + player2Score) == 40
         {
             game5.isHidden = false
 
@@ -317,7 +339,7 @@ class ViewController: UIViewController {
             d_4.text = "\(deadBall - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
         }
         
-        if (player1Score + deadBall + player2Score) == 55
+        if (player1Score + deadBall + player2Score) == 50
         {
             game6.isHidden = false
             
@@ -326,7 +348,7 @@ class ViewController: UIViewController {
             d_5.text = "\(deadBall - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
         }
         
-        if (player1Score + deadBall + player2Score) == 66
+        if (player1Score + deadBall + player2Score) == 60
         {
             game7.isHidden = false
 
@@ -335,7 +357,7 @@ class ViewController: UIViewController {
             d_6.text = "\(deadBall - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
         }
         
-        if (player1Score + deadBall + player2Score) == 77
+        if (player1Score + deadBall + player2Score) == 70
         {
             game8.isHidden = false
             
@@ -344,7 +366,7 @@ class ViewController: UIViewController {
             d_7.text = "\(deadBall - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)! )"
         }
         
-        if (player1Score + deadBall + player2Score) == 88
+        if (player1Score + deadBall + player2Score) == 80
         {
             game9.isHidden = false
             
@@ -353,7 +375,7 @@ class ViewController: UIViewController {
             d_8.text = "\(deadBall - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
         }
         
-        if (player1Score + deadBall + player2Score) == 99
+        if (player1Score + deadBall + player2Score) == 90
         {
             game10.isHidden = false
             
@@ -362,7 +384,7 @@ class ViewController: UIViewController {
             d_9.text = "\(deadBall - Int(d_8.text!)! - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
         }
         
-        if (player1Score + deadBall + player2Score) == 110
+        if (player1Score + deadBall + player2Score) == 100
         {
             game11.isHidden = false
             
@@ -371,7 +393,7 @@ class ViewController: UIViewController {
             d_10.text = "\(deadBall - Int(d_9.text!)! - Int(d_8.text!)! - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
         }
         
-        if (player1Score + deadBall + player2Score) == 121
+        if (player1Score + deadBall + player2Score) == 110
         {
             game12.isHidden = false
             
@@ -380,7 +402,7 @@ class ViewController: UIViewController {
             d_11.text = "\(deadBall - Int(d_10.text!)! - Int(d_9.text!)! - Int(d_8.text!)! - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
         }
         
-        if (player1Score + deadBall + player2Score) == 132
+        if (player1Score + deadBall + player2Score) == 120
         {
             game13.isHidden = false
             p1_12.text = "\(player1Score - Int(p1_11.text!)! - Int(p1_10.text!)! - Int(p1_9.text!)! - Int(p1_8.text!)! - Int(p1_7.text!)! - Int(p1_6.text!)! - Int(p1_5.text!)! - Int(p1_4.text!)! - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
@@ -388,7 +410,7 @@ class ViewController: UIViewController {
             d_12.text = "\(deadBall - Int(d_11.text!)! - Int(d_10.text!)! - Int(d_9.text!)! - Int(d_8.text!)! - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
         }
         
-        if (player1Score + deadBall + player2Score) == 143
+        if (player1Score + deadBall + player2Score) == 130
         {
             
             game14.isHidden = false
@@ -398,7 +420,7 @@ class ViewController: UIViewController {
             d_13.text = "\(deadBall - Int(d_12.text!)! - Int(d_11.text!)! - Int(d_10.text!)! - Int(d_9.text!)! - Int(d_8.text!)! - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
         }
         
-        if (player1Score + deadBall + player2Score) == 154
+        if (player1Score + deadBall + player2Score) == 140
         {
             
             p1_14.text = "\(player1Score - Int(p1_13.text!)! - Int(p1_12.text!)! - Int(p1_11.text!)! - Int(p1_10.text!)! - Int(p1_9.text!)! - Int(p1_8.text!)! - Int(p1_7.text!)! - Int(p1_6.text!)! - Int(p1_5.text!)! - Int(p1_4.text!)! - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
@@ -413,12 +435,15 @@ class ViewController: UIViewController {
     func updateScore()
 
     {
-        if Int(ballCount.text!)! < 11
+        if Int(ballCount.text!)! < 10
         {
             
             p1_1.text = "\(player1Score)"
             p2_1.text = "\(player2Score)"
             d_1.text = "\(deadBall)"
+            IN1.text = "\(inning)"
+           
+           
             
             game1.backgroundColor = UIColor.magenta
             game2.backgroundColor = UIColor.clear
@@ -428,11 +453,13 @@ class ViewController: UIViewController {
             
         }
 
-        if (Int(ballCount.text!)! >= 11) && (Int(ballCount.text!)! < 22)
+        if (Int(ballCount.text!)! >= 10) && (Int(ballCount.text!)! < 20)
         {
             p1_2.text = "\(player1Score - Int(p1_1.text!)!)"
             p2_2.text = "\(player2Score - Int(p2_1.text!)!)"
             d_2.text = "\(deadBall - Int(d_1.text!)!)"
+            IN2.text = "\(inning - Int(IN1.text!)!)"
+            
             
             game3.backgroundColor = UIColor.clear
             game2.backgroundColor = UIColor.magenta
@@ -441,11 +468,12 @@ class ViewController: UIViewController {
             
         }
         
-        if (Int(ballCount.text!)! >= 22) && (Int(ballCount.text!)! < 33)
+        if (Int(ballCount.text!)! >= 20) && (Int(ballCount.text!)! < 30)
         {
             p1_3.text = "\(player1Score - Int(p1_2.text!)! - Int(p1_1.text!)!)"
             p2_3.text = "\(player2Score - Int(p2_2.text!)! - Int(p2_1.text!)!)"
             d_3.text = "\(deadBall - Int(d_2.text!)! - Int(d_1.text!)!)"
+            IN3.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)!)"
             
             game4.backgroundColor = UIColor.clear
             game3.backgroundColor = UIColor.magenta
@@ -454,88 +482,96 @@ class ViewController: UIViewController {
             
         }
         
-        if (Int(ballCount.text!)! >= 33) && (Int(ballCount.text!)! < 44)
+        if (Int(ballCount.text!)! >= 30) && (Int(ballCount.text!)! < 40)
         {
             p1_4.text = "\(player1Score - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
             p2_4.text = "\(player2Score - Int(p2_3.text!)! - Int(p2_2.text!)! - Int(p2_1.text!)!)"
             d_4.text = "\(deadBall - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
+            IN4.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)!)"
             
             game5.backgroundColor = UIColor.clear
             game4.backgroundColor = UIColor.magenta
             game3.backgroundColor = UIColor.clear
         }
         
-        if (Int(ballCount.text!)! >= 44) && (Int(ballCount.text!)! < 55)
+        if (Int(ballCount.text!)! >= 40) && (Int(ballCount.text!)! < 50)
         {
             p1_5.text = "\(player1Score - Int(p1_4.text!)! - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
             p2_5.text = "\(player2Score - Int(p2_4.text!)! - Int(p2_3.text!)! - Int(p2_2.text!)! - Int(p2_1.text!)!)"
             d_5.text = "\(deadBall - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
+            IN5.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)!)"
             
             game6.backgroundColor = UIColor.clear
             game5.backgroundColor = UIColor.magenta
             game4.backgroundColor = UIColor.clear
         }
         
-        if (Int(ballCount.text!)! >= 55) && (Int(ballCount.text!)! < 66)
+        if (Int(ballCount.text!)! >= 50) && (Int(ballCount.text!)! < 60)
         {
             p1_6.text = "\(player1Score - Int(p1_5.text!)! - Int(p1_4.text!)! - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
             p2_6.text = "\(player2Score - Int(p2_5.text!)! - Int(p2_4.text!)! - Int(p2_3.text!)! - Int(p2_2.text!)! - Int(p2_1.text!)!)"
             d_6.text = "\(deadBall - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
+            IN6.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)!)"
             
             game7.backgroundColor = UIColor.clear
             game6.backgroundColor = UIColor.magenta
             game5.backgroundColor = UIColor.clear
         }
         
-        if (Int(ballCount.text!)! >= 66) && (Int(ballCount.text!)! < 77)
+        if (Int(ballCount.text!)! >= 60) && (Int(ballCount.text!)! < 70)
         {
             p1_7.text = "\(player1Score - Int(p1_6.text!)! - Int(p1_5.text!)! - Int(p1_4.text!)! - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
             p2_7.text = "\(player2Score - Int(p2_6.text!)! - Int(p2_5.text!)! - Int(p2_4.text!)! - Int(p2_3.text!)! - Int(p2_2.text!)! - Int(p2_1.text!)!)"
             d_7.text = "\(deadBall - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)! )"
+             IN7.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)!)"
             
             game8.backgroundColor = UIColor.clear
             game7.backgroundColor = UIColor.magenta
             game6.backgroundColor = UIColor.clear
         }
         
-        if (Int(ballCount.text!)! >= 77) && (Int(ballCount.text!)! < 88)
+        if (Int(ballCount.text!)! >= 70) && (Int(ballCount.text!)! < 80)
         {
             p1_8.text = "\(player1Score - Int(p1_7.text!)! - Int(p1_6.text!)! - Int(p1_5.text!)! - Int(p1_4.text!)! - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
             p2_8.text = "\(player2Score - Int(p2_7.text!)! - Int(p2_6.text!)! - Int(p2_5.text!)! - Int(p2_4.text!)! - Int(p2_3.text!)! - Int(p2_2.text!)! - Int(p2_1.text!)!)"
             d_8.text = "\(deadBall - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
+            IN8.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)!)"
             
             game9.backgroundColor = UIColor.clear
             game8.backgroundColor = UIColor.magenta
             game7.backgroundColor = UIColor.clear
         }
         
-        if (Int(ballCount.text!)! >= 88) && (Int(ballCount.text!)! < 99)
+        if (Int(ballCount.text!)! >= 80) && (Int(ballCount.text!)! < 90)
         {
             p1_9.text = "\(player1Score - Int(p1_8.text!)! - Int(p1_7.text!)! - Int(p1_6.text!)! - Int(p1_5.text!)! - Int(p1_4.text!)! - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
             p2_9.text = "\(player2Score - Int(p2_8.text!)! - Int(p2_7.text!)! - Int(p2_6.text!)! - Int(p2_5.text!)! - Int(p2_4.text!)! - Int(p2_3.text!)! - Int(p2_2.text!)! - Int(p2_1.text!)!)"
             d_9.text = "\(deadBall - Int(d_8.text!)! - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
+            IN9.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)!)"
             
             game10.backgroundColor = UIColor.clear
             game9.backgroundColor = UIColor.magenta
             game8.backgroundColor = UIColor.clear
         }
         
-        if (Int(ballCount.text!)! >= 99) && (Int(ballCount.text!)! < 110)
+        if (Int(ballCount.text!)! >= 90) && (Int(ballCount.text!)! < 100)
         {
             p1_10.text = "\(player1Score - Int(p1_9.text!)! - Int(p1_8.text!)! - Int(p1_7.text!)! - Int(p1_6.text!)! - Int(p1_5.text!)! - Int(p1_4.text!)! - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
             p2_10.text = "\(player2Score - Int(p2_9.text!)! - Int(p2_8.text!)! - Int(p2_7.text!)! - Int(p2_6.text!)! - Int(p2_5.text!)! - Int(p2_4.text!)! - Int(p2_3.text!)! - Int(p2_2.text!)! - Int(p2_1.text!)!)"
             d_10.text = "\(deadBall - Int(d_9.text!)! - Int(d_8.text!)! - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
+             IN10.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)!)"
             
             game11.backgroundColor = UIColor.clear
             game10.backgroundColor = UIColor.magenta
             game9.backgroundColor = UIColor.clear
         }
         
-        if (Int(ballCount.text!)! >= 110) && (Int(ballCount.text!)! < 121)
+        if (Int(ballCount.text!)! >= 100) && (Int(ballCount.text!)! < 110)
         {
             p1_11.text = "\(player1Score - Int(p1_10.text!)! - Int(p1_9.text!)! - Int(p1_8.text!)! - Int(p1_7.text!)! - Int(p1_6.text!)! - Int(p1_5.text!)! - Int(p1_4.text!)! - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
             p2_11.text = "\(player2Score - Int(p2_10.text!)! - Int(p2_9.text!)! - Int(p2_8.text!)! - Int(p2_7.text!)! - Int(p2_6.text!)! - Int(p2_5.text!)! - Int(p2_4.text!)! - Int(p2_3.text!)! - Int(p2_2.text!)! - Int(p2_1.text!)!)"
             d_11.text = "\(deadBall - Int(d_10.text!)! - Int(d_9.text!)! - Int(d_8.text!)! - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
+            IN11.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)!)"
             
             
             game12.backgroundColor = UIColor.clear
@@ -543,11 +579,12 @@ class ViewController: UIViewController {
             game10.backgroundColor = UIColor.clear
         }
         
-        if (Int(ballCount.text!)! >= 121) && (Int(ballCount.text!)! < 132)
+        if (Int(ballCount.text!)! >= 110) && (Int(ballCount.text!)! < 120)
         {
             p1_12.text = "\(player1Score - Int(p1_11.text!)! - Int(p1_10.text!)! - Int(p1_9.text!)! - Int(p1_8.text!)! - Int(p1_7.text!)! - Int(p1_6.text!)! - Int(p1_5.text!)! - Int(p1_4.text!)! - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
             p2_12.text = "\(player2Score - Int(p2_11.text!)! - Int(p2_10.text!)! - Int(p2_9.text!)! - Int(p2_8.text!)! - Int(p2_7.text!)! - Int(p2_6.text!)! - Int(p2_5.text!)! - Int(p2_4.text!)! - Int(p2_3.text!)! - Int(p2_2.text!)! - Int(p2_1.text!)!)"
             d_12.text = "\(deadBall - Int(d_11.text!)! - Int(d_10.text!)! - Int(d_9.text!)! - Int(d_8.text!)! - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
+            IN12.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)! - Int(IN11.text!)!)"
             
             
             game13.backgroundColor = UIColor.clear
@@ -555,11 +592,12 @@ class ViewController: UIViewController {
             game11.backgroundColor = UIColor.clear
         }
         
-        if (Int(ballCount.text!)! >= 132) && (Int(ballCount.text!)! < 143)
+        if (Int(ballCount.text!)! >= 120) && (Int(ballCount.text!)! < 130)
         {
             p1_13.text = "\(player1Score - Int(p1_12.text!)! - Int(p1_11.text!)! - Int(p1_10.text!)! - Int(p1_9.text!)! - Int(p1_8.text!)! - Int(p1_7.text!)! - Int(p1_6.text!)! - Int(p1_5.text!)! - Int(p1_4.text!)! - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
             p2_13.text = "\(player2Score - Int(p2_12.text!)! - Int(p2_11.text!)! - Int(p2_10.text!)! - Int(p2_9.text!)! - Int(p2_8.text!)! - Int(p2_7.text!)! - Int(p2_6.text!)! - Int(p2_5.text!)! - Int(p2_4.text!)! - Int(p2_3.text!)! - Int(p2_2.text!)! - Int(p2_1.text!)!)"
             d_13.text = "\(deadBall - Int(d_12.text!)! - Int(d_11.text!)! - Int(d_10.text!)! - Int(d_9.text!)! - Int(d_8.text!)! - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
+            IN13.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)! - Int(IN11.text!)! - Int(IN12.text!)!)"
             
             
             game14.backgroundColor = UIColor.clear
@@ -567,11 +605,12 @@ class ViewController: UIViewController {
             game12.backgroundColor = UIColor.clear
         }
         
-        if (Int(ballCount.text!)! >= 143) && (Int(ballCount.text!)! < 154)
+        if (Int(ballCount.text!)! >= 130) && (Int(ballCount.text!)! < 140)
         {
             p1_14.text = "\(player1Score - Int(p1_13.text!)! - Int(p1_12.text!)! - Int(p1_11.text!)! - Int(p1_10.text!)! - Int(p1_9.text!)! - Int(p1_8.text!)! - Int(p1_7.text!)! - Int(p1_6.text!)! - Int(p1_5.text!)! - Int(p1_4.text!)! - Int(p1_3.text!)! - Int(p1_2.text!)! - Int(p1_1.text!)!)"
             p2_14.text = "\(player2Score - Int(p2_13.text!)! - Int(p2_12.text!)! - Int(p2_11.text!)! - Int(p2_10.text!)! - Int(p2_9.text!)! - Int(p2_8.text!)! - Int(p2_7.text!)! - Int(p2_6.text!)! - Int(p2_5.text!)! - Int(p2_4.text!)! - Int(p2_3.text!)! - Int(p2_2.text!)! - Int(p2_1.text!)!)"
             d_14.text = "\(deadBall - Int(d_13.text!)! - Int(d_12.text!)! - Int(d_11.text!)! - Int(d_10.text!)! - Int(d_9.text!)! - Int(d_8.text!)! - Int(d_7.text!)! - Int(d_6.text!)! - Int(d_5.text!)! - Int(d_4.text!)! - Int(d_3.text!)! - Int(d_2.text!)! - Int(d_1.text!)!)"
+            IN14.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)! - Int(IN11.text!)! - Int(IN12.text!)! - Int(IN13.text!)!)"
             
             
             game14.backgroundColor = UIColor.magenta
@@ -581,6 +620,8 @@ class ViewController: UIViewController {
         
 
     }
+    
+    
 
     func resetScore()
     {
@@ -662,7 +703,7 @@ class ViewController: UIViewController {
     func skillLevelReached()
     {
        
-        if (skillLevelLabelp1.text == "1") && (score1.text == "16")
+        if (skillLevelLabelp1.text == "1") && (score1.text == "14")
         {
             hideButtons()
             player1Win()
@@ -671,7 +712,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp2.text == "1") && (score2.text == "16")
+        if (skillLevelLabelp2.text == "1") && (score2.text == "14")
         {
             
             hideButtons()
@@ -680,7 +721,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp1.text == "2") && (score1.text == "21")
+        if (skillLevelLabelp1.text == "2") && (score1.text == "19")
         {
             hideButtons()
             player1Win()
@@ -689,7 +730,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp2.text == "2") && (score2.text == "21")
+        if (skillLevelLabelp2.text == "2") && (score2.text == "19")
         {
             hideButtons()
             player2Win()
@@ -698,7 +739,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp1.text == "3") && (score1.text == "27")
+        if (skillLevelLabelp1.text == "3") && (score1.text == "25")
         {
             hideButtons()
             player1Win()
@@ -706,7 +747,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp2.text == "3") && (score2.text == "27")
+        if (skillLevelLabelp2.text == "3") && (score2.text == "25")
         {
             hideButtons()
             player2Win()
@@ -715,7 +756,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp1.text == "4") && (score1.text == "33")
+        if (skillLevelLabelp1.text == "4") && (score1.text == "31")
         {
             hideButtons()
             player1Win()
@@ -724,7 +765,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp2.text == "4") && (score2.text == "33")
+        if (skillLevelLabelp2.text == "4") && (score2.text == "31")
         {
             hideButtons()
             player2Win()
@@ -733,7 +774,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp1.text == "5") && (score1.text == "40")
+        if (skillLevelLabelp1.text == "5") && (score1.text == "38")
         {
             hideButtons()
             player1Win()
@@ -742,7 +783,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp2.text == "5") && (score2.text == "40")
+        if (skillLevelLabelp2.text == "5") && (score2.text == "38")
         {
             hideButtons()
             player2Win()
@@ -751,7 +792,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp1.text == "6") && (score1.text == "48")
+        if (skillLevelLabelp1.text == "6") && (score1.text == "46")
         {
             hideButtons()
             player1Win()
@@ -760,7 +801,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp2.text == "6") && (score2.text == "48")
+        if (skillLevelLabelp2.text == "6") && (score2.text == "46")
         {
             hideButtons()
             player2Win()
@@ -769,7 +810,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp1.text == "7") && (score1.text == "57")
+        if (skillLevelLabelp1.text == "7") && (score1.text == "55")
         {
             hideButtons()
             player1Win()
@@ -778,7 +819,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp2.text == "7") && (score2.text == "57")
+        if (skillLevelLabelp2.text == "7") && (score2.text == "55")
         {
             hideButtons()
             player2Win()
@@ -787,7 +828,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp1.text == "8") && (score1.text == "67")
+        if (skillLevelLabelp1.text == "8") && (score1.text == "65")
         {
             hideButtons()
             player1Win()
@@ -796,7 +837,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp2.text == "8") && (score2.text == "67")
+        if (skillLevelLabelp2.text == "8") && (score2.text == "65")
         {
             hideButtons()
             player2Win()
@@ -805,7 +846,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp1.text == "9") && (score1.text == "77")
+        if (skillLevelLabelp1.text == "9") && (score1.text == "75")
         {
             hideButtons()
             player1Win()
@@ -814,7 +855,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp2.text == "9") && (score2.text == "77")
+        if (skillLevelLabelp2.text == "9") && (score2.text == "75")
         {
             hideButtons()
             player2Win()
@@ -823,7 +864,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp1.text == "10") && (score1.text == "87")
+        if (skillLevelLabelp1.text == "10") && (score1.text == "85")
         {
             hideButtons()
             player1Win()
@@ -832,7 +873,7 @@ class ViewController: UIViewController {
 
         }
         
-        if (skillLevelLabelp2.text == "10") && (score2.text == "87")
+        if (skillLevelLabelp2.text == "10") && (score2.text == "85")
         {
             hideButtons()
             player2Win()
@@ -848,101 +889,101 @@ class ViewController: UIViewController {
     {
         if skillLevelLabelp1.text == "1"
         {
-            p1Remainder.text = "\(16 - Int(score1.text!)!)"
+            p1Remainder.text = "\(14 - Int(score1.text!)!)"
         }
         
         if skillLevelLabelp2.text == "1"
         {
-            p2Remainder.text = "\(16 - Int(score2.text!)!)"
+            p2Remainder.text = "\(14 - Int(score2.text!)!)"
         }
         
         if skillLevelLabelp1.text == "2"
         {
-            p1Remainder.text = "\(21 - Int(score1.text!)!)"
+            p1Remainder.text = "\(19 - Int(score1.text!)!)"
         }
         
         if skillLevelLabelp2.text == "2"
         {
-            p2Remainder.text = "\(21 - Int(score2.text!)!)"
+            p2Remainder.text = "\(19 - Int(score2.text!)!)"
         }
         
         if skillLevelLabelp1.text == "3"
         {
-            p1Remainder.text = "\(27 - Int(score1.text!)!)"
+            p1Remainder.text = "\(25 - Int(score1.text!)!)"
         }
         
         if skillLevelLabelp2.text == "3"
         {
-            p2Remainder.text = "\(27 - Int(score2.text!)!)"
+            p2Remainder.text = "\(25 - Int(score2.text!)!)"
         }
         
         if skillLevelLabelp1.text == "4"
         {
-            p1Remainder.text = "\(33 - Int(score1.text!)!)"
+            p1Remainder.text = "\(31 - Int(score1.text!)!)"
         }
         
         if skillLevelLabelp2.text == "4"
         {
-            p2Remainder.text = "\(33 - Int(score2.text!)!)"
+            p2Remainder.text = "\(31 - Int(score2.text!)!)"
         }
         
         if skillLevelLabelp1.text == "5"
         {
-            p1Remainder.text = "\(40 - Int(score1.text!)!)"
+            p1Remainder.text = "\(38 - Int(score1.text!)!)"
         }
         
         if skillLevelLabelp2.text == "5"
         {
-            p2Remainder.text = "\(40 - Int(score2.text!)!)"
+            p2Remainder.text = "\(38 - Int(score2.text!)!)"
         }
         
         if skillLevelLabelp1.text == "6"
         {
-            p1Remainder.text = "\(48 - Int(score1.text!)!)"
+            p1Remainder.text = "\(46 - Int(score1.text!)!)"
         }
         
         if skillLevelLabelp2.text == "6"
         {
-            p2Remainder.text = "\(48 - Int(score2.text!)!)"
+            p2Remainder.text = "\(46 - Int(score2.text!)!)"
         }
         
         if skillLevelLabelp1.text == "7"
         {
-            p1Remainder.text = "\(57 - Int(score1.text!)!)"
+            p1Remainder.text = "\(55 - Int(score1.text!)!)"
         }
         
         if skillLevelLabelp2.text == "7"
         {
-            p2Remainder.text = "\(57 - Int(score2.text!)!)"
+            p2Remainder.text = "\(55 - Int(score2.text!)!)"
         }
         
         if skillLevelLabelp1.text == "8"
         {
-            p1Remainder.text = "\(67 - Int(score1.text!)!)"
+            p1Remainder.text = "\(65 - Int(score1.text!)!)"
         }
         
         if skillLevelLabelp2.text == "8"
         {
-            p2Remainder.text = "\(67 - Int(score2.text!)!)"
+            p2Remainder.text = "\(65 - Int(score2.text!)!)"
         }
         
         if skillLevelLabelp1.text == "9"
         {
-            p1Remainder.text = "\(77 - Int(score1.text!)!)"
+            p1Remainder.text = "\(75 - Int(score1.text!)!)"
         }
         
         if skillLevelLabelp2.text == "9"
         {
-            p2Remainder.text = "\(77 - Int(score2.text!)!)"
+            p2Remainder.text = "\(75 - Int(score2.text!)!)"
         }
         if skillLevelLabelp1.text == "10"
         {
-            p1Remainder.text = "\(87 - Int(score1.text!)!)"
+            p1Remainder.text = "\(85 - Int(score1.text!)!)"
         }
         
         if skillLevelLabelp2.text == "10"
         {
-            p2Remainder.text = "\(87 - Int(score2.text!)!)"
+            p2Remainder.text = "\(85 - Int(score2.text!)!)"
         }
         
     }
@@ -1008,102 +1049,102 @@ class ViewController: UIViewController {
     {
         if skillLevelLabelp1.text == "1"
         {
-            p1Remainder.text = "16"
+            p1Remainder.text = "14"
         }
         
         if skillLevelLabelp2.text == "1"
         {
-            p2Remainder.text = "16"
+            p2Remainder.text = "14"
         }
         
         if skillLevelLabelp1.text == "2"
         {
-            p1Remainder.text = "21"
+            p1Remainder.text = "19"
         }
         
         if skillLevelLabelp2.text == "2"
         {
-            p2Remainder.text = "21"
+            p2Remainder.text = "19"
         }
         
         if skillLevelLabelp1.text == "3"
         {
-            p1Remainder.text = "27"
+            p1Remainder.text = "25"
         }
         
         if skillLevelLabelp2.text == "3"
         {
-            p2Remainder.text = "27"
+            p2Remainder.text = "25"
         }
         
         if skillLevelLabelp1.text == "4"
         {
-            p1Remainder.text = "33"
+            p1Remainder.text = "31"
         }
         
         if skillLevelLabelp2.text == "4"
         {
-            p2Remainder.text = "33"
+            p2Remainder.text = "31"
         }
         
         if skillLevelLabelp1.text == "5"
         {
-            p1Remainder.text = "40"
+            p1Remainder.text = "38"
         }
         
         if skillLevelLabelp2.text == "5"
         {
-            p2Remainder.text = "40"
+            p2Remainder.text = "38"
         }
         
         if skillLevelLabelp1.text == "6"
         {
-            p1Remainder.text = "48"
+            p1Remainder.text = "46"
         }
         
         if skillLevelLabelp2.text == "6"
         {
-            p2Remainder.text = "48"
+            p2Remainder.text = "46"
         }
         
         if skillLevelLabelp1.text == "7"
         {
-            p1Remainder.text = "57"
+            p1Remainder.text = "55"
         }
         
         if skillLevelLabelp2.text == "7"
         {
-            p2Remainder.text = "57"
+            p2Remainder.text = "55"
         }
         
         if skillLevelLabelp1.text == "8"
         {
-            p1Remainder.text = "67"
+            p1Remainder.text = "65"
         }
         
         if skillLevelLabelp2.text == "8"
         {
-            p2Remainder.text = "67"
+            p2Remainder.text = "65"
         }
         
         if skillLevelLabelp1.text == "9"
         {
-            p1Remainder.text = "77"
+            p1Remainder.text = "75"
         }
         
         if skillLevelLabelp2.text == "9"
         {
-            p2Remainder.text = "77"
+            p2Remainder.text = "75"
         }
         
         if skillLevelLabelp1.text == "10"
         {
-            p1Remainder.text = "87"
+            p1Remainder.text = "85"
         }
         
         if skillLevelLabelp2.text == "10"
         {
-            p2Remainder.text = "87"
+            p2Remainder.text = "85"
         }
     }
     
@@ -1111,6 +1152,58 @@ class ViewController: UIViewController {
     {
         //Skill Level 1
         if loserSkillLevel == 1
+        {
+            if loserScore < 3
+            {
+                finalScoreLabel.text = "20/0"
+            }
+            
+            if loserScore == 3
+            {
+                finalScoreLabel.text = "19/1"
+            }
+            
+            if loserScore == 4
+            {
+                finalScoreLabel.text = "18/2"
+            }
+            
+            if loserScore >= 5 && loserScore <= 6
+            {
+                finalScoreLabel.text = "17/3"
+            }
+            
+            if loserScore == 7
+            {
+                finalScoreLabel.text = "16/4"
+            }
+            
+            if loserScore == 8
+            {
+                finalScoreLabel.text = "15/5"
+            }
+            
+            if loserScore >= 9 && loserScore <= 10
+            {
+                finalScoreLabel.text = "14/6"
+            }
+            
+            if loserScore == 11
+            {
+                finalScoreLabel.text = "13/7"
+            }
+            
+            if loserScore >= 12 && loserScore <= 13
+            {
+                finalScoreLabel.text = "12/8"
+            }
+            
+            
+        }
+        
+        
+        //Skill Level 2
+        if loserSkillLevel == 2
         {
             if loserScore < 4
             {
@@ -1127,45 +1220,41 @@ class ViewController: UIViewController {
                 finalScoreLabel.text = "18/2"
             }
             
-            if loserScore >= 8 && loserScore <= 9
+            if loserScore == 8
             {
                 finalScoreLabel.text = "17/3"
             }
             
-            if loserScore == 10
+            if loserScore >= 9 && loserScore <= 10
             {
                 finalScoreLabel.text = "16/4"
             }
             
-            if loserScore == 11
+            if loserScore >= 11 && loserScore <= 12
             {
                 finalScoreLabel.text = "15/5"
             }
             
-            if loserScore == 12
+            if loserScore >= 13 && loserScore <= 14
             {
                 finalScoreLabel.text = "14/6"
             }
             
-            if loserScore == 13
+            if loserScore >= 15 && loserScore <= 16
             {
                 finalScoreLabel.text = "13/7"
             }
             
-            if loserScore == 14
+            if loserScore >= 17 && loserScore <= 18
             {
                 finalScoreLabel.text = "12/8"
             }
             
-            if loserScore == 15
-            {
-                finalScoreLabel.text = "11/9"
-            }
+           
         }
         
-        
-        //Skill Level 2
-        if loserSkillLevel == 2
+        //Skill Level 3
+        if loserSkillLevel == 3
         {
             if loserScore < 5
             {
@@ -1177,49 +1266,46 @@ class ViewController: UIViewController {
                 finalScoreLabel.text = "19/1"
             }
             
-            if loserScore >= 7 && loserScore <= 8
+            if loserScore >= 7 && loserScore <= 9
             {
                 finalScoreLabel.text = "18/2"
             }
             
-            if loserScore >= 9 && loserScore <= 10
+            if loserScore >= 10 && loserScore <= 11
             {
                 finalScoreLabel.text = "17/3"
             }
             
-            if loserScore >= 11 && loserScore <= 12
+            if loserScore >= 12 && loserScore <= 14
             {
                 finalScoreLabel.text = "16/4"
             }
             
-            if loserScore >= 13 && loserScore <= 14
+            if loserScore >= 15 && loserScore <= 16
             {
                 finalScoreLabel.text = "15/5"
             }
             
-            if loserScore >= 15 && loserScore <= 16
+            if loserScore >= 17 && loserScore <= 19
             {
                 finalScoreLabel.text = "14/6"
             }
             
-            if loserScore >= 17 && loserScore <= 18
+            if loserScore >= 20 && loserScore <= 21
             {
                 finalScoreLabel.text = "13/7"
             }
             
-            if loserScore == 19
+            if loserScore >= 22 && loserScore <= 24
             {
                 finalScoreLabel.text = "12/8"
             }
             
-            if loserScore == 20
-            {
-                finalScoreLabel.text = "11/9"
-            }
+        
         }
         
-        //Skill Level 3
-        if loserSkillLevel == 3
+        //Skill Level 4
+        if loserSkillLevel == 4
         {
             if loserScore < 6
             {
@@ -1241,61 +1327,7 @@ class ViewController: UIViewController {
                 finalScoreLabel.text = "17/3"
             }
             
-            if loserScore >= 15 && loserScore <= 16
-            {
-                finalScoreLabel.text = "16/4"
-            }
-            
-            if loserScore >= 17 && loserScore <= 18
-            {
-                finalScoreLabel.text = "15/5"
-            }
-            
-            if loserScore >= 19 && loserScore <= 20
-            {
-                finalScoreLabel.text = "14/6"
-            }
-            
-            if loserScore >= 21 && loserScore <= 22
-            {
-                finalScoreLabel.text = "13/7"
-            }
-            
-            if loserScore >= 23 && loserScore <= 24
-            {
-                finalScoreLabel.text = "12/8"
-            }
-            
-            if loserScore >= 25 && loserScore <= 26
-            {
-                finalScoreLabel.text = "11/9"
-            }
-        }
-        
-        //Skill Level 4
-        if loserSkillLevel == 4
-        {
-            if loserScore < 7
-            {
-                finalScoreLabel.text = "20/0"
-            }
-            
-            if loserScore >= 7 && loserScore <= 9
-            {
-                finalScoreLabel.text = "19/1"
-            }
-            
-            if loserScore >= 10 && loserScore <= 12
-            {
-                finalScoreLabel.text = "18/2"
-            }
-            
-            if loserScore >= 13 && loserScore <= 15
-            {
-                finalScoreLabel.text = "17/3"
-            }
-            
-            if loserScore >= 16 && loserScore <= 18
+            if loserScore >= 15 && loserScore <= 18
             {
                 finalScoreLabel.text = "16/4"
             }
@@ -1320,90 +1352,84 @@ class ViewController: UIViewController {
                 finalScoreLabel.text = "12/8"
             }
             
-            if loserScore >= 31 && loserScore <= 32
-            {
-                finalScoreLabel.text = "11/9"
-            }
+          
         }
         
         //Skill Level 5
         if loserSkillLevel == 5
         {
-            if loserScore < 8
+            if loserScore < 7
             {
                 finalScoreLabel.text = "20/0"
             }
             
-            if loserScore >= 8 && loserScore <= 11
+            if loserScore >= 7 && loserScore <= 10
             {
                 finalScoreLabel.text = "19/1"
             }
             
-            if loserScore >= 12 && loserScore <= 15
+            if loserScore >= 11 && loserScore <= 14
             {
                 finalScoreLabel.text = "18/2"
             }
             
-            if loserScore >= 16 && loserScore <= 19
+            if loserScore >= 15 && loserScore <= 18
             {
                 finalScoreLabel.text = "17/3"
             }
             
-            if loserScore >= 20 && loserScore <= 23
+            if loserScore >= 19 && loserScore <= 22
             {
                 finalScoreLabel.text = "16/4"
             }
             
-            if loserScore >= 24 && loserScore <= 27
+            if loserScore >= 23 && loserScore <= 26
             {
                 finalScoreLabel.text = "15/5"
             }
             
-            if loserScore >= 28 && loserScore <= 30
+            if loserScore >= 27 && loserScore <= 29
             {
                 finalScoreLabel.text = "14/6"
             }
             
-            if loserScore >= 31 && loserScore <= 33
+            if loserScore >= 30 && loserScore <= 33
             {
                 finalScoreLabel.text = "13/7"
             }
             
-            if loserScore >= 34 && loserScore <= 36
+            if loserScore >= 34 && loserScore <= 37
             {
                 finalScoreLabel.text = "12/8"
             }
             
-            if loserScore >= 37 && loserScore <= 39
-            {
-                finalScoreLabel.text = "11/9"
-            }
+          
         }
         
         //Skill Level 6
         if loserSkillLevel == 6
         {
-            if loserScore < 10
+            if loserScore < 9
             {
                 finalScoreLabel.text = "20/0"
             }
             
-            if loserScore >= 10 && loserScore <= 14
+            if loserScore >= 9 && loserScore <= 12
             {
                 finalScoreLabel.text = "19/1"
             }
             
-            if loserScore >= 15 && loserScore <= 19
+            if loserScore >= 13 && loserScore <= 17
             {
                 finalScoreLabel.text = "18/2"
             }
             
-            if loserScore >= 20 && loserScore <= 23
+            if loserScore >= 18 && loserScore <= 22
             {
                 finalScoreLabel.text = "17/3"
             }
             
-            if loserScore >= 24 && loserScore <= 27
+            if loserScore >= 23 && loserScore <= 27
             {
                 finalScoreLabel.text = "16/4"
             }
@@ -1413,41 +1439,38 @@ class ViewController: UIViewController {
                 finalScoreLabel.text = "15/5"
             }
             
-            if loserScore >= 32 && loserScore <= 35
+            if loserScore >= 32 && loserScore <= 36
             {
                 finalScoreLabel.text = "14/6"
             }
             
-            if loserScore >= 36 && loserScore <= 39
+            if loserScore >= 37 && loserScore <= 40
             {
                 finalScoreLabel.text = "13/7"
             }
             
-            if loserScore >= 40 && loserScore <= 43
+            if loserScore >= 41 && loserScore <= 45
             {
                 finalScoreLabel.text = "12/8"
             }
             
-            if loserScore >= 44 && loserScore <= 47
-            {
-                finalScoreLabel.text = "11/9"
-            }
+          
         }
         
         //Skill Level 7
         if loserSkillLevel == 7
         {
-            if loserScore < 12
+            if loserScore < 11
             {
                 finalScoreLabel.text = "20/0"
             }
             
-            if loserScore >= 12 && loserScore <= 16
+            if loserScore >= 11 && loserScore <= 15
             {
                 finalScoreLabel.text = "19/1"
             }
             
-            if loserScore >= 17 && loserScore <= 21
+            if loserScore >= 16 && loserScore <= 21
             {
                 finalScoreLabel.text = "18/2"
             }
@@ -1457,51 +1480,48 @@ class ViewController: UIViewController {
                 finalScoreLabel.text = "17/3"
             }
             
-            if loserScore >= 27 && loserScore <= 31
+            if loserScore >= 27 && loserScore <= 32
             {
                 finalScoreLabel.text = "16/4"
             }
             
-            if loserScore >= 32 && loserScore <= 36
+            if loserScore >= 33 && loserScore <= 37
             {
                 finalScoreLabel.text = "15/5"
             }
             
-            if loserScore >= 37 && loserScore <= 41
+            if loserScore >= 38 && loserScore <= 43
             {
                 finalScoreLabel.text = "14/6"
             }
             
-            if loserScore >= 42 && loserScore <= 46
+            if loserScore >= 44 && loserScore <= 49
             {
                 finalScoreLabel.text = "13/7"
             }
             
-            if loserScore >= 47 && loserScore <= 51
+            if loserScore >= 50 && loserScore <= 54
             {
                 finalScoreLabel.text = "12/8"
             }
+          
             
-            if loserScore >= 52 && loserScore <= 56
-            {
-                finalScoreLabel.text = "11/9"
-            }
         }
         
         //Skill Level 8
         if loserSkillLevel == 8
         {
-            if loserScore < 15
+            if loserScore < 14
             {
                 finalScoreLabel.text = "20/0"
             }
             
-            if loserScore >= 15 && loserScore <= 20
+            if loserScore >= 14 && loserScore <= 19
             {
                 finalScoreLabel.text = "19/1"
             }
             
-            if loserScore >= 21 && loserScore <= 26
+            if loserScore >= 20 && loserScore <= 26
             {
                 finalScoreLabel.text = "18/2"
             }
@@ -1511,150 +1531,223 @@ class ViewController: UIViewController {
                 finalScoreLabel.text = "17/3"
             }
             
-            if loserScore >= 33 && loserScore <= 38
+            if loserScore >= 33 && loserScore <= 39
             {
                 finalScoreLabel.text = "16/4"
             }
             
-            if loserScore >= 39 && loserScore <= 44
+            if loserScore >= 40 && loserScore <= 45
             {
                 finalScoreLabel.text = "15/5"
             }
             
-            if loserScore >= 45 && loserScore <= 50
+            if loserScore >= 46 && loserScore <= 52
             {
                 finalScoreLabel.text = "14/6"
             }
             
-            if loserScore >= 51 && loserScore <= 56
+            if loserScore >= 53 && loserScore <= 58
             {
                 finalScoreLabel.text = "13/7"
             }
             
-            if loserScore >= 57 && loserScore <= 61
+            if loserScore >= 59 && loserScore <= 64
             {
                 finalScoreLabel.text = "12/8"
             }
             
-            if loserScore >= 62 && loserScore <= 66
-            {
-                finalScoreLabel.text = "11/9"
-            }
+            
         }
         
         //Skill Level 9
         if loserSkillLevel == 9
         {
-            if loserScore < 19
+            if loserScore < 18
             {
                 finalScoreLabel.text = "20/0"
             }
             
-            if loserScore >= 19 && loserScore <= 25
+            if loserScore >= 18 && loserScore <= 24
             {
                 finalScoreLabel.text = "19/1"
             }
             
-            if loserScore >= 26 && loserScore <= 32
+            if loserScore >= 25 && loserScore <= 31
             {
                 finalScoreLabel.text = "18/2"
             }
             
-            if loserScore >= 33 && loserScore <= 39
+            if loserScore >= 32 && loserScore <= 38
             {
                 finalScoreLabel.text = "17/3"
             }
             
-            if loserScore >= 40 && loserScore <= 46
+            if loserScore >= 39 && loserScore <= 46
             {
                 finalScoreLabel.text = "16/4"
             }
             
-            if loserScore >= 47 && loserScore <= 52
+            if loserScore >= 47 && loserScore <= 53
             {
                 finalScoreLabel.text = "15/5"
             }
             
-            if loserScore >= 53 && loserScore <= 58
+            if loserScore >= 54 && loserScore <= 60
             {
                 finalScoreLabel.text = "14/6"
             }
             
-            if loserScore >= 59 && loserScore <= 64
+            if loserScore >= 61 && loserScore <= 67
             {
                 finalScoreLabel.text = "13/7"
             }
             
-            if loserScore >= 65 && loserScore <= 70
+            if loserScore >= 68 && loserScore <= 74
             {
                 finalScoreLabel.text = "12/8"
             }
             
-            if loserScore >= 71 && loserScore <= 76
-            {
-                finalScoreLabel.text = "11/9"
-            }
+           
         }
         
         //Skill Level 10
-        if loserSkillLevel == 10
-        {
-            if loserScore < 24
-            {
-                finalScoreLabel.text = "20/0"
-            }
-            
-            if loserScore >= 24 && loserScore <= 30
-            {
-                finalScoreLabel.text = "19/1"
-            }
-            
-            if loserScore >= 31 && loserScore <= 37
-            {
-                finalScoreLabel.text = "18/2"
-            }
-            
-            if loserScore >= 38 && loserScore <= 44
-            {
-                finalScoreLabel.text = "17/3"
-            }
-            
-            if loserScore >= 45 && loserScore <= 51
-            {
-                finalScoreLabel.text = "16/4"
-            }
-            
-            if loserScore >= 52 && loserScore <= 58
-            {
-                finalScoreLabel.text = "15/5"
-            }
-            
-            if loserScore >= 59 && loserScore <= 65
-            {
-                finalScoreLabel.text = "14/6"
-            }
-            
-            if loserScore >= 66 && loserScore <= 72
-            {
-                finalScoreLabel.text = "13/7"
-            }
-            
-            if loserScore >= 73 && loserScore <= 79
-            {
-                finalScoreLabel.text = "12/8"
-            }
-            
-            if loserScore >= 80 && loserScore <= 86
-            {
-                finalScoreLabel.text = "11/9"
-            }
-        }
-        
-       
-        
-        
+//        if loserSkillLevel == 10
+//        {
+//            if loserScore < 24
+//            {
+//                finalScoreLabel.text = "20/0"
+//            }
+//
+//            if loserScore >= 24 && loserScore <= 30
+//            {
+//                finalScoreLabel.text = "19/1"
+//            }
+//
+//            if loserScore >= 31 && loserScore <= 37
+//            {
+//                finalScoreLabel.text = "18/2"
+//            }
+//
+//            if loserScore >= 38 && loserScore <= 44
+//            {
+//                finalScoreLabel.text = "17/3"
+//            }
+//
+//            if loserScore >= 45 && loserScore <= 51
+//            {
+//                finalScoreLabel.text = "16/4"
+//            }
+//
+//            if loserScore >= 52 && loserScore <= 58
+//            {
+//                finalScoreLabel.text = "15/5"
+//            }
+//
+//            if loserScore >= 59 && loserScore <= 65
+//            {
+//                finalScoreLabel.text = "14/6"
+//            }
+//
+//            if loserScore >= 66 && loserScore <= 72
+//            {
+//                finalScoreLabel.text = "13/7"
+//            }
+//
+//            if loserScore >= 73 && loserScore <= 79
+//            {
+//                finalScoreLabel.text = "12/8"
+//            }
+//
+//            if loserScore >= 80 && loserScore <= 86
+//            {
+//                finalScoreLabel.text = "11/9"
+//            }
+//        }
         
     }
+
+//    func updateInnings()
+//    {
+//
+//
+//        if Int(ballCount.text!)! < 11
+//
+//        {
+//
+//            IN1.text = "\(inning)"
+//
+//
+//        }
+//
+//        if (Int(ballCount.text!)! >= 11) && (Int(ballCount.text!)! < 22)
+//        {
+//
+//            IN2.text = "\(inning - Int(IN1.text!)!)"
+//
+//
+//        }
+//
+//        if (Int(ballCount.text!)! >= 22) && (Int(ballCount.text!)! < 33)
+//        {
+//            IN3.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)!)"
+//        }
+//
+//        if (Int(ballCount.text!)! >= 33) && (Int(ballCount.text!)! < 44)
+//        {
+//            IN4.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)!)"
+//        }
+//
+//        if (Int(ballCount.text!)! >= 44) && (Int(ballCount.text!)! < 55)
+//        {
+//            IN5.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)!)"
+//        }
+//
+//        if (Int(ballCount.text!)! >= 55) && (Int(ballCount.text!)! < 66)
+//        {
+//            IN6.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)!)"
+//        }
+//
+//        if (Int(ballCount.text!)! >= 66) && (Int(ballCount.text!)! < 77)
+//        {
+//            IN7.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)!)"
+//        }
+//
+//        if (Int(ballCount.text!)! >= 77) && (Int(ballCount.text!)! < 88)
+//        {
+//            IN8.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)!)"
+//        }
+//
+//        if (Int(ballCount.text!)! >= 88) && (Int(ballCount.text!)! < 99)
+//        {
+//            IN9.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)!)"
+//        }
+//
+//        if (Int(ballCount.text!)! >= 99) && (Int(ballCount.text!)! < 110)
+//        {
+//            IN10.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)!)"
+//        }
+//
+//        if (Int(ballCount.text!)! >= 110) && (Int(ballCount.text!)! < 121)
+//        {
+//            IN11.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)!)"
+//        }
+//
+//        if (Int(ballCount.text!)! >= 121) && (Int(ballCount.text!)! < 132)
+//        {
+//            IN12.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)! - Int(IN11.text!)!)"
+//        }
+//
+//        if (Int(ballCount.text!)! >= 132) && (Int(ballCount.text!)! < 143)
+//        {
+//            IN13.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)! - Int(IN11.text!)! - Int(IN12.text!)!)"
+//        }
+//
+//        if (Int(ballCount.text!)! >= 143) && (Int(ballCount.text!)! < 154)
+//        {
+//            IN14.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)! - Int(IN11.text!)! - Int(IN12.text!)! - Int(IN13.text!)!)"
+//        }
+//    }
+
 }
 
 

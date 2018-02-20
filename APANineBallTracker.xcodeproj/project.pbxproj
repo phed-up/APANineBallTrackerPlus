@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7785A34203BE2C10052A04B /* Basso.wav in Resources */ = {isa = PBXBuildFile; fileRef = E7785A33203BE2C10052A04B /* Basso.wav */; };
 		E7C473141FD7602F00F9AAC3 /* Applause.wav in Resources */ = {isa = PBXBuildFile; fileRef = E7C473131FD7602F00F9AAC3 /* Applause.wav */; };
 		E7C473161FD76EA900F9AAC3 /* ballSunk.wav in Resources */ = {isa = PBXBuildFile; fileRef = E7C473151FD76EA900F9AAC3 /* ballSunk.wav */; };
 		E7D88C941FD3B158004D461C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D88C931FD3B158004D461C /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E7785A33203BE2C10052A04B /* Basso.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Basso.wav; path = resourceFiles/Basso.wav; sourceTree = SOURCE_ROOT; };
 		E7C473131FD7602F00F9AAC3 /* Applause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Applause.wav; sourceTree = "<group>"; };
 		E7C473151FD76EA900F9AAC3 /* ballSunk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ballSunk.wav; sourceTree = "<group>"; };
 		E7D88C901FD3B158004D461C /* APANineBallTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APANineBallTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 				E7D88C9F1FD3B158004D461C /* Info.plist */,
 				E7C473131FD7602F00F9AAC3 /* Applause.wav */,
 				E7C473151FD76EA900F9AAC3 /* ballSunk.wav */,
+				E7785A33203BE2C10052A04B /* Basso.wav */,
 			);
 			path = APANineBallTracker;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C473141FD7602F00F9AAC3 /* Applause.wav in Resources */,
+				E7785A34203BE2C10052A04B /* Basso.wav in Resources */,
 				E7D88C9E1FD3B158004D461C /* LaunchScreen.storyboard in Resources */,
 				E7C473161FD76EA900F9AAC3 /* ballSunk.wav in Resources */,
 				E7D88C9B1FD3B158004D461C /* Assets.xcassets in Resources */,
