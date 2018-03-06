@@ -27,8 +27,8 @@ class ViewController: UIViewController {
     var loserSkillLevel = 0
     
     var inning = 0
-    var player1ID = 0
-    var player2ID = 0
+    var player1ID = 1
+    var player2ID = 2
     
     @IBOutlet weak var inningLabel: UILabel!
     
@@ -154,7 +154,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var game13: UILabel!
     @IBOutlet weak var game14: UILabel!
     
-  
+    @IBOutlet weak var leftArrow: UIImageView!
+    @IBOutlet weak var rightArrow: UIImageView!
+    
     
     
     
@@ -163,7 +165,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         resetScore()
+        player2Btn.isHidden = true
+        player2SubtractBtn.isHidden = true
+        rightArrow.isHidden = true
         
+        
+        
+        ballCount.text = "0"
         
 
         skillLevelLabelp1.text = p1SkillLevel
@@ -175,12 +183,72 @@ class ViewController: UIViewController {
         nameLabel2.text = p2Name
         
         ballAmount()
-        
-       
-       
+     
     
     }
+    
+    
+    @IBAction func switchPlayer(_ sender: UIButton) {
+        
+        
 
+        
+        if player1ID == 1 && player2ID == 2 {
+            
+            player2Btn.isHidden = false
+            player2SubtractBtn.isHidden = false
+            rightArrow.isHidden = false
+            leftArrow.isHidden = true
+            
+            
+            
+            player1Btn.isHidden = true
+            player1SubtractBtn.isHidden = true
+            
+            
+            player1ID = 2
+            player2ID = 1
+            
+        }
+        else if player1ID == 2 && player2ID == 1 {
+            
+            player2Btn.isHidden = true
+            player2SubtractBtn.isHidden = true
+            rightArrow.isHidden = true
+            leftArrow.isHidden = false
+            
+            
+            
+            
+            player1Btn.isHidden = false
+            player1SubtractBtn.isHidden = false
+
+            
+            inning = inning + 1
+            inningLabel.text = "\(inning)"
+            updateInnings()
+            
+            player1ID = 1
+            player2ID = 2
+        }
+        
+        updateScore()
+//
+//                if player2ID == 1 && player1ID == 1
+//                {
+//                    inning = inning + 1
+//                    player1ID = 0
+//                    player2ID = 0
+//
+//
+//                    updateInnings()
+//                    inningLabel.text = "\(inning)"
+//
+//                }
+        
+        
+    }
+    
     
     @IBAction func player1BtnPressed(_ sender: Any)
     {
@@ -194,19 +262,7 @@ class ViewController: UIViewController {
         remainder()
         playSound(soundFileName: "ballSunk")
         
-//       player1ID = 1
-//
-//        if player2ID == 1 && player1ID == 1
-//        {
-//            inning = inning + 1
-//            player1ID = 0
-//            player2ID = 0
-//
-//
-//            updateInnings()
-//            inningLabel.text = "\(inning)"
-//
-//        }
+
         
         
 
@@ -241,7 +297,7 @@ class ViewController: UIViewController {
         playSound(soundFileName: "ballSunk")
         
         
-        player2ID = 1
+
         
         
     }
@@ -266,7 +322,7 @@ class ViewController: UIViewController {
         
         scoring()
         updateScore()
-        playSound(soundFileName: "Basso")
+        playSound(soundFileName: "ballSunk")
         
         
 
@@ -1202,6 +1258,7 @@ class ViewController: UIViewController {
         }
         
         
+        
         //Skill Level 2
         if loserSkillLevel == 2
         {
@@ -1610,144 +1667,96 @@ class ViewController: UIViewController {
            
         }
         
-        //Skill Level 10
-//        if loserSkillLevel == 10
-//        {
-//            if loserScore < 24
-//            {
-//                finalScoreLabel.text = "20/0"
-//            }
-//
-//            if loserScore >= 24 && loserScore <= 30
-//            {
-//                finalScoreLabel.text = "19/1"
-//            }
-//
-//            if loserScore >= 31 && loserScore <= 37
-//            {
-//                finalScoreLabel.text = "18/2"
-//            }
-//
-//            if loserScore >= 38 && loserScore <= 44
-//            {
-//                finalScoreLabel.text = "17/3"
-//            }
-//
-//            if loserScore >= 45 && loserScore <= 51
-//            {
-//                finalScoreLabel.text = "16/4"
-//            }
-//
-//            if loserScore >= 52 && loserScore <= 58
-//            {
-//                finalScoreLabel.text = "15/5"
-//            }
-//
-//            if loserScore >= 59 && loserScore <= 65
-//            {
-//                finalScoreLabel.text = "14/6"
-//            }
-//
-//            if loserScore >= 66 && loserScore <= 72
-//            {
-//                finalScoreLabel.text = "13/7"
-//            }
-//
-//            if loserScore >= 73 && loserScore <= 79
-//            {
-//                finalScoreLabel.text = "12/8"
-//            }
-//
-//            if loserScore >= 80 && loserScore <= 86
-//            {
-//                finalScoreLabel.text = "11/9"
-//            }
-//        }
+//Update Inning
+        
+        
+        
         
     }
 
-//    func updateInnings()
-//    {
-//
-//
-//        if Int(ballCount.text!)! < 11
-//
-//        {
-//
-//            IN1.text = "\(inning)"
-//
-//
-//        }
-//
-//        if (Int(ballCount.text!)! >= 11) && (Int(ballCount.text!)! < 22)
-//        {
-//
-//            IN2.text = "\(inning - Int(IN1.text!)!)"
-//
-//
-//        }
-//
-//        if (Int(ballCount.text!)! >= 22) && (Int(ballCount.text!)! < 33)
-//        {
-//            IN3.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)!)"
-//        }
-//
-//        if (Int(ballCount.text!)! >= 33) && (Int(ballCount.text!)! < 44)
-//        {
-//            IN4.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)!)"
-//        }
-//
-//        if (Int(ballCount.text!)! >= 44) && (Int(ballCount.text!)! < 55)
-//        {
-//            IN5.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)!)"
-//        }
-//
-//        if (Int(ballCount.text!)! >= 55) && (Int(ballCount.text!)! < 66)
-//        {
-//            IN6.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)!)"
-//        }
-//
-//        if (Int(ballCount.text!)! >= 66) && (Int(ballCount.text!)! < 77)
-//        {
-//            IN7.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)!)"
-//        }
-//
-//        if (Int(ballCount.text!)! >= 77) && (Int(ballCount.text!)! < 88)
-//        {
-//            IN8.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)!)"
-//        }
-//
-//        if (Int(ballCount.text!)! >= 88) && (Int(ballCount.text!)! < 99)
-//        {
-//            IN9.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)!)"
-//        }
-//
-//        if (Int(ballCount.text!)! >= 99) && (Int(ballCount.text!)! < 110)
-//        {
-//            IN10.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)!)"
-//        }
-//
-//        if (Int(ballCount.text!)! >= 110) && (Int(ballCount.text!)! < 121)
-//        {
-//            IN11.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)!)"
-//        }
-//
-//        if (Int(ballCount.text!)! >= 121) && (Int(ballCount.text!)! < 132)
-//        {
-//            IN12.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)! - Int(IN11.text!)!)"
-//        }
-//
-//        if (Int(ballCount.text!)! >= 132) && (Int(ballCount.text!)! < 143)
-//        {
-//            IN13.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)! - Int(IN11.text!)! - Int(IN12.text!)!)"
-//        }
-//
-//        if (Int(ballCount.text!)! >= 143) && (Int(ballCount.text!)! < 154)
-//        {
-//            IN14.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)! - Int(IN11.text!)! - Int(IN12.text!)! - Int(IN13.text!)!)"
-//        }
-//    }
+    func updateInnings()
+    {
 
+
+        if Int(ballCount.text!)! < 10
+
+        {
+
+            IN1.text = "\(inning)"
+
+
+        }
+
+        if (Int(ballCount.text!)! >= 10) && (Int(ballCount.text!)! < 20)
+        {
+
+            IN2.text = "\(inning - Int(IN1.text!)!)"
+
+
+        }
+
+        if (Int(ballCount.text!)! >= 20) && (Int(ballCount.text!)! < 30)
+        {
+            IN3.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)!)"
+        }
+
+        if (Int(ballCount.text!)! >= 30) && (Int(ballCount.text!)! < 40)
+        {
+            IN4.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)!)"
+        }
+
+        if (Int(ballCount.text!)! >= 40) && (Int(ballCount.text!)! < 50)
+        {
+            IN5.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)!)"
+        }
+
+        if (Int(ballCount.text!)! >= 50) && (Int(ballCount.text!)! < 60)
+        {
+            IN6.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)!)"
+        }
+
+        if (Int(ballCount.text!)! >= 60) && (Int(ballCount.text!)! < 70)
+        {
+            IN7.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)!)"
+        }
+
+        if (Int(ballCount.text!)! >= 70) && (Int(ballCount.text!)! < 80)
+        {
+            IN8.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)!)"
+        }
+
+        if (Int(ballCount.text!)! >= 80) && (Int(ballCount.text!)! < 90)
+        {
+            IN9.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)!)"
+        }
+
+        if (Int(ballCount.text!)! >= 90) && (Int(ballCount.text!)! < 100)
+        {
+            IN10.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)!)"
+        }
+
+        if (Int(ballCount.text!)! >= 100) && (Int(ballCount.text!)! < 110)
+        {
+            IN11.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)!)"
+        }
+
+        if (Int(ballCount.text!)! >= 110) && (Int(ballCount.text!)! < 120)
+        {
+            IN12.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)! - Int(IN11.text!)!)"
+        }
+
+        if (Int(ballCount.text!)! >= 120) && (Int(ballCount.text!)! < 130)
+        {
+            IN13.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)! - Int(IN11.text!)! - Int(IN12.text!)!)"
+        }
+
+        if (Int(ballCount.text!)! >= 130) && (Int(ballCount.text!)! < 140)
+        {
+            IN14.text = "\(inning - Int(IN1.text!)! - Int(IN2.text!)! - Int(IN3.text!)! - Int(IN4.text!)! - Int(IN5.text!)! - Int(IN6.text!)! - Int(IN7.text!)! - Int(IN8.text!)! - Int(IN9.text!)! - Int(IN10.text!)! - Int(IN11.text!)! - Int(IN12.text!)! - Int(IN13.text!)!)"
+        }
+    }
+
+    
 }
 
 

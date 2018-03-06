@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class skillLevelViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
@@ -115,22 +116,38 @@ class skillLevelViewController: UIViewController, UIPickerViewDataSource, UIPick
         {
             errorLabel.isHidden = false
             errorLabel.text = "Please select a skill level for \(player1Name.text!)"
+            playSound(soundFileName: "Basso")
+            
         }
         else if p2Label.text == "0" && p1Label.text != "0"
         {
             errorLabel.isHidden = false
             errorLabel.text = "Please select a skill level for \(player2Name.text!)"
+            playSound(soundFileName: "Basso")
         }
         else if p1Label.text == "0" && p2Label.text == "0"
         {
             errorLabel.isHidden = false
             errorLabel.text = "Please select a skill level for \(player1Name.text!) and \(player2Name.text!)"
+            playSound(soundFileName: "Basso")
         }
         else
         {
         performSegue(withIdentifier: "secondVC", sender: self)
         }
 
+    }
+    
+    func playSound(soundFileName: String)
+    {
+        if let soundURL = Bundle.main.url(forResource: soundFileName, withExtension: "wav")
+            
+        {
+            var mySound: SystemSoundID = 0
+            AudioServicesCreateSystemSoundID(soundURL as CFURL, &mySound)
+            // Play
+            AudioServicesPlaySystemSound(mySound);
+        }
     }
     
     
@@ -146,9 +163,9 @@ class skillLevelViewController: UIViewController, UIPickerViewDataSource, UIPick
             destinationVC.p2Name = player2Name.text!
             
             
-            
-            
         }
+        
+        
     
     }
     
